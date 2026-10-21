@@ -5,8 +5,8 @@ public enum Type
     Blinde,
     Normal
 }
-[CreateAssetMenu(fileName = "Ennemis", menuName = "Scriptable Objects/Ennemis")]
-public class Ennemis : ScriptableObject
+[CreateAssetMenu(fileName = "EnnemisData", menuName = "Scriptable Objects/EnnemisData")]
+public class EnnemisData : ScriptableObject
 {
     [SerializeField] private Type _typeEnemis;
     [SerializeField] private int _life;

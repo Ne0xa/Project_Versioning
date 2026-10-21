@@ -11,4 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a16c6e83a9ec8344a2370ab3de369eb, type: 3}
   m_Name: Ennemis
-  m_EditorClassIdentifier: Assembly-CSharp::Ennemis
+  m_EditorClassIdentifier: Assembly-CSharp::EnnemisData
+  _typeEnemis: 1
+  _life: 10
+  _speed: 5
+  _attack: 1
+  _spriterenderer: {fileID: 0}
