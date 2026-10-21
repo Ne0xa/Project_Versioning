@@ -6,7 +6,6 @@ public class MovementIa : MonoBehaviour
     [SerializeField] private Transform _A;
     [SerializeField] private Transform _B;
     [SerializeField] private GameObject _player;
-    [SerializeField] private float _distanceToMove = 2f;
     [SerializeField] private float _stopDistance = 5f;
     [SerializeField] private Rigidbody2D _rb;
     Vector3 target;
@@ -29,7 +28,7 @@ public class MovementIa : MonoBehaviour
         Vector3 playerpos = _player.transform.position;
         Vector3 directionTonPlayer = maPosition - playerpos;
         float distance = Vector3.Distance(maPosition, playerpos);
-        if (distance < _distanceToMove)
+        if (distance < _ennemisData.DistanceToMove)
         {
             if (directionTonPlayer.magnitude > _stopDistance)
             {
