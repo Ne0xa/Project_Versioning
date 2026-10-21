@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
-    [SerializeField] float health;
+    [SerializeField] float extraJumpForce;
     
     [Header("Ground Detection")]
     [SerializeField] float groundCheckDistance = 0.1f;
@@ -45,6 +45,11 @@ public class Movement : MonoBehaviour
         if (isGrounded && jumpInput.action.WasPressedThisFrame())
         {
             rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
+        }
+
+        if (jumpInput.action.IsPressed() && rb.linearVelocity.y > 0)
+        {
+            rb.AddForce(Vector2.up * extraJumpForce, ForceMode2D.Force);
         }
     }
 
