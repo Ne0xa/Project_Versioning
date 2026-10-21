@@ -3,6 +3,7 @@ using UnityEngine;
 public enum Type
 {
     Blinde,
+    Casque,
     Normal
 }
 [CreateAssetMenu(fileName = "EnnemisData", menuName = "Scriptable Objects/EnnemisData")]
