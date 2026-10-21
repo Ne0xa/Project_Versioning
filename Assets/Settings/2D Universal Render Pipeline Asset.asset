@@ -10,14 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
+<<<<<<<< HEAD:Assets/Settings/2D Universal Render Pipeline Asset.asset
   m_Name: 2D Universal Render Pipeline Asset
+========
+  m_Name: New Universal Render Pipeline Asset
+>>>>>>>> origin/Benjamin:Assets/Settings/New Universal Render Pipeline Asset.asset
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset
   k_AssetVersion: 13
   k_AssetPreviousVersion: 13
   m_RendererType: 1
   m_RendererData: {fileID: 0}
   m_RendererDataList:
+<<<<<<<< HEAD:Assets/Settings/2D Universal Render Pipeline Asset.asset
   - {fileID: 11400000, guid: be0148312e1bbc44ca0223dd7d345477, type: 2}
+========
+  - {fileID: 11400000, guid: 1971e01a005267343878f98f9f9110fd, type: 2}
+>>>>>>>> origin/Benjamin:Assets/Settings/New Universal Render Pipeline Asset.asset
   m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
