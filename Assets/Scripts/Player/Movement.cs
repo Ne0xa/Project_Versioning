@@ -14,8 +14,6 @@ public class Movement : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] InputActionReference moveInput;
     [SerializeField] InputActionReference jumpInput;
-    [SerializeField] InputActionReference attackInput;
-    [SerializeField] InputActionReference shootInput;
     
     private Rigidbody2D rb;
     private CapsuleCollider2D collider;
