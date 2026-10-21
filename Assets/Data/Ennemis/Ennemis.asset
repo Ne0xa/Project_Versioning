@@ -15,5 +15,6 @@ MonoBehaviour:
   _typeEnemis: 1
   _life: 10
   _speed: 5
+  _distanceToMove: 5
   _attack: 1
   _spriterenderer: {fileID: 0}
