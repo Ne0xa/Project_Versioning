@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Ennemis
   m_EditorClassIdentifier: Assembly-CSharp::EnnemisData
   _typeEnemis: 1
-  _life: 10
+  _life: 2
   _speed: 5
+  _distanceToMove: 2
   _attack: 1
   _spriterenderer: {fileID: 0}

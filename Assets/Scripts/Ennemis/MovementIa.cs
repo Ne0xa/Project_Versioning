@@ -26,9 +26,12 @@ public class MovementIa : MonoBehaviour
     {
         Vector3 maPosition = transform.position;
         Vector3 playerpos = _player.transform.position;
-        Vector3 directionTonPlayer = maPosition - playerpos;
+        Vector3 directionTonPlayer = playerpos - maPosition;
         float distance = Vector3.Distance(maPosition, playerpos);
-        if (distance < _ennemisData.DistanceToMove)
+
+
+        // Move to Player
+        if (distance <= _ennemisData.DistanceToMove)
         {
             if (directionTonPlayer.magnitude > _stopDistance)
             {
@@ -37,8 +40,13 @@ public class MovementIa : MonoBehaviour
         }
         else
         {
+            //var dir = target - transform.position;
+            //dir.Normalize();
+            //transform.Translate(dir * _ennemisData.Speed * Time.deltaTime);
+
             transform.position = Vector3.MoveTowards(transform.position, target, _ennemisData.Speed * Time.deltaTime);
-            if (transform.position == target)
+            Debug.Log(Vector3.Distance(maPosition, target));
+            if (Vector3.Distance(maPosition, target) < 1f)
             {
                 target = target == _A.position ? _B.position : _A.position;
 

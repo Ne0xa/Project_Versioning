@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private float cooldown;
+    [SerializeField] private float shootCooldown;
+    [SerializeField] private float attackCooldown;
     [SerializeField] private float damage;
+    [SerializeField] Movement movement;
     
     [Header("Inputs")]
     [SerializeField] InputActionReference attackInput;
@@ -16,6 +18,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform firePoint;
     
     private float _elapsedTime;
+    private Animator _anim;
+    private SpriteRenderer _spriteRenderer;
 
     private void OnEnable()
     {
@@ -29,15 +33,30 @@ public class PlayerAttack : MonoBehaviour
         shootInput.action.Disable();
     }
 
+    void Start()
+    {
+        _anim = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
         if (shootInput.action.IsPressed())
         {
-            if (_elapsedTime >= cooldown)
+            if (_elapsedTime >= shootCooldown)
             {
                 _elapsedTime = 0;
                 Shoot();
+            }
+        }
+
+        if (attackInput.action.IsPressed())
+        {
+            if (_elapsedTime >= attackCooldown)
+            {
+                _elapsedTime = 0;
+                Attack();
             }
         }
     }
@@ -45,7 +64,14 @@ public class PlayerAttack : MonoBehaviour
     void Shoot()
     {
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        
-        bullet.Init(firePoint.position);
+        bullet.Init(new Vector3(movement.facing, 0, 0));
+        // _anim.SetTrigger("Shoot");
+        Debug.Log("the player is shooting");
+    }
+
+    void Attack(int damage = 1 )
+    {
+        // _anim.SetTrigger("Attack");
+        Debug.Log("the player is attacking");
     }
 }
