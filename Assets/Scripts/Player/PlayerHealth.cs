@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     
-    void  Dead()
+    void Dead()
     {
         _isDead = true;
         _anim.SetTrigger("Death");
