@@ -37,6 +37,9 @@
 # Visual Studio cache directory
 .vs/
 
+.vsconfig/
+.vscode/
+
 # Rider cache directory
 .idea/
 
