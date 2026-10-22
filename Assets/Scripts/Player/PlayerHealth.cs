@@ -1,10 +1,10 @@
 using UnityEngine;
-
+using NaughtyAttributes;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] private int maxHealth;
-    [SerializeField] private int currentHealth;
+    [ShowNonSerializedField] private int currentHealth;
     
     private bool _isDead;
     
