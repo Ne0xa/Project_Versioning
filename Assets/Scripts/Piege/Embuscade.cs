@@ -6,7 +6,7 @@ public class Embuscade : MonoBehaviour
     [SerializeField] private Transform _apparition1;
     [SerializeField] private Transform _apparition2;
     [SerializeField] private Transform _apparition3;
-    [SerializeField] private float _ecart;
+    [SerializeField] private float _ecart = 1f;
     [SerializeField] private int _nbrApparition1 = 2;
     [SerializeField] private int _nbrApparition2 = 1;
     [SerializeField] private int _nbrApparition3 = 3;

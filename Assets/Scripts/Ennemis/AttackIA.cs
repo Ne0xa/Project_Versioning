@@ -15,6 +15,11 @@ public class AttackIA : MonoBehaviour
     private void Start()
     {
         _anim = GetComponent<Animator>();
+        if(_posPlayer == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null) _posPlayer = player.transform;
+        }
     }
     void Attack()
     {
