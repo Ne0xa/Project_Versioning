@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private float cooldown;
+    [SerializeField] private float shootCooldown;
+    [SerializeField] private float attackCooldown;
     [SerializeField] private float damage;
     
     [Header("Inputs")]
@@ -16,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform firePoint;
     
     private float _elapsedTime;
+    private Animator anim;
 
     private void OnEnable()
     {
@@ -29,15 +31,29 @@ public class PlayerAttack : MonoBehaviour
         shootInput.action.Disable();
     }
 
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
         if (shootInput.action.IsPressed())
         {
-            if (_elapsedTime >= cooldown)
+            if (_elapsedTime >= shootCooldown)
             {
                 _elapsedTime = 0;
                 Shoot();
+            }
+        }
+
+        if (attackInput.action.IsPressed())
+        {
+            if (_elapsedTime >= attackCooldown)
+            {
+                _elapsedTime = 0;
+                Attack();
             }
         }
     }
@@ -47,5 +63,12 @@ public class PlayerAttack : MonoBehaviour
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         
         bullet.Init(firePoint.position);
+        anim.SetTrigger("Shoot");
+    }
+
+    void Attack(int damage = 1 )
+    {
+        
+        anim.SetTrigger("Attack");
     }
 }
