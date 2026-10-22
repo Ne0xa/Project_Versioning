@@ -18,8 +18,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+        
         currentHealth -= damage;
         anim.SetTrigger("Damage");
+        
         if (currentHealth <= 0)
         {
             Dead();
@@ -31,5 +34,6 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         anim.SetTrigger("Death");
         GetComponent<Collider2D>().enabled = false;
+        Application.Quit();
     }
 }
