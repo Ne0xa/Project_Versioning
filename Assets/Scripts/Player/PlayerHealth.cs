@@ -6,30 +6,34 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
     
-    private bool isDead;
+    private bool _isDead;
     
-    private Animator anim;
+    private Animator _anim;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        _anim = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
+        if (_isDead) return;
+        
         currentHealth -= damage;
-        anim.SetTrigger("Damage");
+        _anim.SetTrigger("Damage");
+        
         if (currentHealth <= 0)
         {
             Dead();
         }
     }
     
-    void  Dead()
+    void Dead()
     {
-        isDead = true;
-        anim.SetTrigger("Death");
+        _isDead = true;
+        _anim.SetTrigger("Death");
         GetComponent<Collider2D>().enabled = false;
+        Application.Quit();
     }
 }

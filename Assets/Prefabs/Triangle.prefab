@@ -105,5 +105,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speed: 10
-  lifeTime: 5
+  lifeTime: 3
   sprite: {fileID: 7309719418957083739}
