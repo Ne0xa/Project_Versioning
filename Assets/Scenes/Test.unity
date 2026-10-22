@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 100156717}
   - component: {fileID: 100156716}
   - component: {fileID: 100156715}
+  - component: {fileID: 100156720}
+  - component: {fileID: 100156719}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -276,6 +278,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &100156719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100156714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e67df93dfd7734459a8b0c1bd57569e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 4
+  currentHealth: 0
+--- !u!114 &100156720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100156714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ffc2b0be0d16bb45b50a5f0a46c2613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement
+  speed: 4
+  jumpForce: 3
+  extraJumpForce: 1.5
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  moveInput: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  jumpInput: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  attackInput: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  shootInput: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &303264538
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +326,7 @@ GameObject:
   - component: {fileID: 303264543}
   - component: {fileID: 303264542}
   - component: {fileID: 303264541}
+  - component: {fileID: 303264545}
   - component: {fileID: 303264539}
   - component: {fileID: 303264544}
   m_Layer: 0
@@ -349,7 +389,7 @@ MonoBehaviour:
   _A: {fileID: 2036567757}
   _B: {fileID: 2076465162}
   _player: {fileID: 100156714}
-  _stopDistance: 2
+  _stopDistance: 0.8
   _rb: {fileID: 303264544}
 --- !u!212 &303264542
 SpriteRenderer:
@@ -452,6 +492,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &303264545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303264538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef616cc6de10dad44a071edd0f59fb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackIA
+  _ennemisData: {fileID: 11400000, guid: 6261cfa72c64f6d41ab5a9f1f890e16d, type: 2}
+  _posPlayer: {fileID: 100156718}
+  _cooldown: 1
+  _anim: {fileID: 0}
+  _detectRange: 2
+  _attackRange: 1
 --- !u!1 &481832338
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +565,7 @@ GameObject:
   - component: {fileID: 571442587}
   - component: {fileID: 571442586}
   - component: {fileID: 571442585}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

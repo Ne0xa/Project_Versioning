@@ -31,7 +31,7 @@ public class MovementIa : MonoBehaviour
 
 
         // Move to Player
-        if (distance < _ennemisData.DistanceToMove)
+        if (distance <= _ennemisData.DistanceToMove)
         {
             if (directionTonPlayer.magnitude > _stopDistance)
             {

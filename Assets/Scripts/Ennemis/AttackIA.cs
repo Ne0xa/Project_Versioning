@@ -5,7 +5,6 @@ public class AttackIA : MonoBehaviour
 {
     [SerializeField] private EnnemisData _ennemisData;
     [SerializeField] private Transform _posPlayer;
-    [SerializeField] private Transform _posEnemy;
     [SerializeField] private float _cooldown = 1f;
     [SerializeField] private Animator _anim;
     [SerializeField] private float _detectRange = 2f;
@@ -27,7 +26,8 @@ public class AttackIA : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        if (elapsedTime >= _cooldown)
+        float distance = Vector2.Distance(transform.position, _posPlayer.position);
+        if (distance <= _attackRange && elapsedTime >= _cooldown)
         {
 
             Attack();
