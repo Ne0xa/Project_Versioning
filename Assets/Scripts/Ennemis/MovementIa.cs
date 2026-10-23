@@ -7,8 +7,12 @@ public class MovementIa : MonoBehaviour
     [SerializeField] private Transform _B;
     [SerializeField] private GameObject _player;
     [SerializeField] private float _stopDistance = 5f;
+    [SerializeField] private float _checkDistance = 1.5f;
     [SerializeField] private Rigidbody2D _rb;
     Vector3 target;
+    
+
+  
     private void Reset()
     {
 
@@ -18,9 +22,18 @@ public class MovementIa : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        target = _A.position;
+        if(_A != null && _B !=null) target = _A.position;
+        if (_player == null)
+        {
+            _player = GameObject.FindWithTag("Player");
+        }
     }
-
+    private bool EnemyAhead(Vector2 direction)
+    {
+        Vector2 origin = (Vector2)transform.position + direction * 0.6f;
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, _checkDistance);
+        return hit.collider != null && hit.collider.GetComponent<MovementIa>() != null;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,9 +44,9 @@ public class MovementIa : MonoBehaviour
 
 
         // Move to Player
-        if (distance <= _ennemisData.DistanceToMove)
+        if (distance <= _ennemisData.DistanceToMove || _A == null)
         {
-            if (directionTonPlayer.magnitude > _stopDistance)
+            if (directionTonPlayer.magnitude > _stopDistance && !EnemyAhead(directionTonPlayer.normalized))
             {
                 _rb.AddForce(directionTonPlayer.normalized * _ennemisData.Speed);
             }

@@ -1,15 +1,8 @@
 using UnityEngine;
 
-public enum Type
-{
-    Blinde,
-    Casque,
-    Normal
-}
 [CreateAssetMenu(fileName = "EnnemisData", menuName = "Scriptable Objects/EnnemisData")]
 public class EnnemisData : ScriptableObject
 {
-    [SerializeField] private Type _typeEnemis;
     [SerializeField] private int _life;
     [SerializeField] private float _speed;
     [SerializeField] private float _distanceToMove = 2f;
@@ -22,7 +15,6 @@ public class EnnemisData : ScriptableObject
     public int Attack => _attack;
     public SpriteRenderer Spriterenderer => _spriterenderer; 
     public GameObject Prefab => _prefab;
-    public Type TypeEnemis => _typeEnemis;
 
     private void Reset()
     {
@@ -30,6 +22,5 @@ public class EnnemisData : ScriptableObject
         _life = 10;
         _speed = 5.0f;
         _attack = 1;
-        _typeEnemis = Type.Normal;
     }
 }
