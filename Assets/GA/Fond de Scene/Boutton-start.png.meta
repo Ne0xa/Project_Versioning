@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GA/Fond de Scene/Boutton-start.png.meta
 guid: 7d25786fdebaeab43bee1e1817ee02b9
+========
+guid: b7347b6c5bc5dee42bde34c0c85ae618
+>>>>>>>> origin/Benjamin:Assets/GA/UI/sprite_Heart.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,12 +107,12 @@ TextureImporter:
       name: Boutton-start_0
       rect:
         serializedVersion: 2
-        x: 165
-        y: 115
-        width: 150
-        height: 40
+        x: 0
+        y: 0
+        width: 480
+        height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +129,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
