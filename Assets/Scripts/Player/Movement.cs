@@ -44,9 +44,12 @@ public class Movement : MonoBehaviour
         _isGrounded = Physics2D.Raycast(collider.bounds.center, Vector2.down, 
             collider.bounds.extents.y + groundCheckDistance,groundLayer);
 
+        _anim.SetBool("isGrounded", _isGrounded);
+        
         if (_isGrounded && jumpInput.action.WasPressedThisFrame())
         {
             _rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
+            _anim.SetTrigger("Jumping");
         }
 
         if (jumpInput.action.IsPressed() && _rb.linearVelocity.y > 0)
