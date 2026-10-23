@@ -1,29 +1,31 @@
 using UnityEngine;
 using NaughtyAttributes;
+
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] private int maxHealth;
-    [ShowNonSerializedField] private int currentHealth;
+    [ShowNonSerializedField] private int _currentHealth;
     
     private bool _isDead;
-    
     private Animator _anim;
+    private Vector3 _startPos;
 
     void Start()
     {
         _anim = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        _currentHealth = maxHealth;
+        _startPos = transform.position;
     }
 
     public void TakeDamage(int damage)
     {
         if (_isDead) return;
         
-        currentHealth -= damage;
-        _anim.SetTrigger("Damage");
+        _currentHealth -= damage;
+        // _anim.SetTrigger("Damage");
         
-        if (currentHealth <= 0)
+        if (_currentHealth <= 0)
         {
             Dead();
         }
@@ -32,8 +34,15 @@ public class PlayerHealth : MonoBehaviour
     void Dead()
     {
         _isDead = true;
-        _anim.SetTrigger("Death");
+        // _anim.SetTrigger("Death");
         GetComponent<Collider2D>().enabled = false;
-        Application.Quit();
+        Respawn();
+    }
+
+    private void Respawn()
+    {
+        _isDead = false;
+        GetComponent<Collider2D>().enabled = true;
+        transform.position = _startPos;
     }
 }

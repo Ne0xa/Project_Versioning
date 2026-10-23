@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float shootCooldown;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float damage;
+    [SerializeField] Movement movement;
     
     [Header("Inputs")]
     [SerializeField] InputActionReference attackInput;
@@ -17,7 +18,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform firePoint;
     
     private float _elapsedTime;
-    private Animator anim;
+    private Animator _anim;
+    private SpriteRenderer _spriteRenderer;
 
     private void OnEnable()
     {
@@ -33,7 +35,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        _anim = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -61,14 +64,14 @@ public class PlayerAttack : MonoBehaviour
     void Shoot()
     {
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        
-        bullet.Init(firePoint.position);
-        anim.SetTrigger("Shoot");
+        bullet.Init(new Vector3(movement.facing, 0, 0));
+        // _anim.SetTrigger("Shoot");
+        Debug.Log("the player is shooting");
     }
 
     void Attack(int damage = 1 )
     {
-        
-        anim.SetTrigger("Attack");
+        // _anim.SetTrigger("Attack");
+        Debug.Log("the player is attacking");
     }
 }
