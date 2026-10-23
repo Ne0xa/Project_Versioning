@@ -17,4 +17,5 @@ MonoBehaviour:
   _speed: 5
   _distanceToMove: 2
   _attack: 1
+  _prefab: {fileID: 1993012592614923330, guid: 6d4a856263129b24cbeef9f882879736, type: 3}
   _spriterenderer: {fileID: 0}
