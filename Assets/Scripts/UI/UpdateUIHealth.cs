@@ -3,8 +3,8 @@ using UnityEngine;
 public class UpdateUIHealth : MonoBehaviour
 {
     [SerializeField] private PlayerHealth _health;
-    [SerializeField] private SpriteRenderer _Healthfull;
-    [SerializeField] private SpriteRenderer _HealthEmpty;
+    [SerializeField] private Sprite _Healthfull;
+    [SerializeField] private Sprite _HealthEmpty;
     private float _ecart = 1.5f;
 
     void Start()
