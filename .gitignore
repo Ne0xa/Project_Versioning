@@ -36,7 +36,6 @@
 
 # Visual Studio cache directory
 .vs/
-
 .vsconfig/
 .vscode/
 
@@ -110,7 +109,3 @@ InitTestScene*.unity*
 
 # UI Toolkit auto generated files
 /UIElementsSchema/
-
-# Auto-generated cache in Assets folder
-/[Aa]ssets/[Ss]ceneDependencyCache*
-.vsconfig
