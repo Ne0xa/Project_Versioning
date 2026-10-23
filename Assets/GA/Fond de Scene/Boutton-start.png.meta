@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GA/Fond de Scene/Boutton-start.png.meta
 guid: 7d25786fdebaeab43bee1e1817ee02b9
+========
+guid: b7347b6c5bc5dee42bde34c0c85ae618
+>>>>>>>> origin/Benjamin:Assets/GA/UI/sprite_Heart.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:
