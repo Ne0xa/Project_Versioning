@@ -7,7 +7,6 @@ public class EnnemisHealth : MonoBehaviour
     [ShowNonSerializedField] private int _currentLife;
     bool isDead = false;
     public bool IsDead => isDead;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         _currentLife = _ennemisData.Life;

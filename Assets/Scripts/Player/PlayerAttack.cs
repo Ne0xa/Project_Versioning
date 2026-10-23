@@ -20,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     private float _elapsedTime;
     private Animator _anim;
     private SpriteRenderer _spriteRenderer;
+    private EnnemisHealth _ennemisHealth;
 
     private void OnEnable()
     {
@@ -61,10 +62,10 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void Shoot()
+    void Shoot(int damage = 1 )
     {
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.Init(new Vector3(movement.facing, 0, 0));
+        bullet.Init(new Vector3(movement.facing, 0, 0), damage);
         // _anim.SetTrigger("Shoot");
         Debug.Log("the player is shooting");
     }
@@ -73,5 +74,6 @@ public class PlayerAttack : MonoBehaviour
     {
         // _anim.SetTrigger("Attack");
         Debug.Log("the player is attacking");
+        _ennemisHealth.TakeDamageEnemy(damage);
     }
 }
