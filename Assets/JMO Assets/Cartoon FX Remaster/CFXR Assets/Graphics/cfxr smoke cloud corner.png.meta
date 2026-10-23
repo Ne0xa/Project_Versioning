@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr smoke cloud corner.png.meta
 guid: 3a251e9a9a7bb9e4f9806508ee938106
+========
+guid: e76531b63c238e94ebede8821db171c1
+>>>>>>>> origin/Benjamin:Assets/GA/Personnages/sprite_Pebble.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _rb;
     private CapsuleCollider2D collider;
     private bool _isGrounded;
+    private Animator _anim;
 
     public float facing = 1f;
     
@@ -29,6 +30,7 @@ public class Movement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<CapsuleCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _anim = GetComponent<Animator>();
     } 
     
     private void OnEnable()
@@ -61,5 +63,6 @@ public class Movement : MonoBehaviour
 
         transform.localScale = new Vector3(facing, 1, 1);
         _rb.linearVelocity = new Vector2(horizontalInput * speed, _rb.linearVelocity.y);
+        _anim.SetBool("isMoving", _rb.linearVelocity.magnitude > 0.0001);
     }
 }

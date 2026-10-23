@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Data")]
     [SerializeField] private float shootCooldown;
     [SerializeField] private float attackCooldown;
-    [SerializeField] private float damage;
+    [SerializeField] private int damage = 1;
     [SerializeField] Movement movement;
     
     [Header("Inputs")]
@@ -66,14 +67,22 @@ public class PlayerAttack : MonoBehaviour
     {
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.Init(new Vector3(movement.facing, 0, 0), damage);
-        // _anim.SetTrigger("Shoot");
+        _anim.SetTrigger("throw");
         Debug.Log("the player is shooting");
     }
 
-    void Attack(int damage = 1 )
+    void Attack()
     {
-        // _anim.SetTrigger("Attack");
+        _anim.SetTrigger("attack");
         Debug.Log("the player is attacking");
-        _ennemisHealth.TakeDamageEnemy(damage);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnnemisHealth>().TakeDamageEnemy(damage);
+            Attack();
+        }
     }
 }
