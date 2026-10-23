@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a16c6e83a9ec8344a2370ab3de369eb, type: 3}
   m_Name: Ennemis
   m_EditorClassIdentifier: Assembly-CSharp::EnnemisData
-  _typeEnemis: 1
   _life: 2
-  _speed: 5
+  _speed: 7
   _distanceToMove: 2
   _attack: 1
   _prefab: {fileID: 1993012592614923330, guid: 6d4a856263129b24cbeef9f882879736, type: 3}
