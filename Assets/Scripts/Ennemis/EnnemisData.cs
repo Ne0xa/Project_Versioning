@@ -14,14 +14,12 @@ public class EnnemisData : ScriptableObject
     [SerializeField] private float _speed;
     [SerializeField] private float _distanceToMove = 2f;
     [SerializeField] private int _attack;
-    [SerializeField] private GameObject _prefab;
     [SerializeField] private SpriteRenderer _spriterenderer;
     public int Life => _life;
     public float Speed => _speed;
     public float DistanceToMove => _distanceToMove;
     public int Attack => _attack;
     public SpriteRenderer Spriterenderer => _spriterenderer; 
-    public GameObject Prefab => _prefab;
     public Type TypeEnemis => _typeEnemis;
 
     private void Reset()
