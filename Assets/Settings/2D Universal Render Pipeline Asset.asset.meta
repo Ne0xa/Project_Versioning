@@ -2,8 +2,8 @@ fileFormatVersion: 2
 <<<<<<<< HEAD:Assets/Settings/2D Universal Render Pipeline Asset.asset.meta
 guid: c551a97631935e34db70a534463951e2
 ========
-guid: 867f7c321d0b8014baf023ea64947980
->>>>>>>> d3d6d3d167e1681753f57937c350861181da42f3:Assets/Settings/New Universal Render Pipeline Asset.asset.meta
+guid: 1971e01a005267343878f98f9f9110fd
+>>>>>>>> origin/Benjamin:Assets/Settings/New Universal Render Pipeline Asset_Renderer.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
