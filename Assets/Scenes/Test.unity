@@ -460,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 600473761}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.928772, y: -4.4957104, z: -10}
+  m_LocalPosition: {x: -2.3687668, y: -4.72571, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -737,7 +737,7 @@ Transform:
   m_GameObject: {fileID: 803784142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100.770004, y: 2.51, z: -10}
+  m_LocalPosition: {x: -77.21, y: 2.28, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -967,13 +967,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6530324854476478946, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530324854476478946, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6855741040258852943, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.3
+      value: -76.74
       objectReference: {fileID: 0}
     - target: {fileID: 6855741040258852943, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 2.28
       objectReference: {fileID: 0}
     - target: {fileID: 6855741040258852943, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1006,6 +1014,22 @@ PrefabInstance:
     - target: {fileID: 6855741040258852943, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660661127107556554, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
+      propertyPath: _OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660661127107556554, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
+      propertyPath: _OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2110667282}
+    - target: {fileID: 7660661127107556554, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
+      propertyPath: _OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660661127107556554, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
+      propertyPath: _OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1074,6 +1098,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &2110667282 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2049304028161053416, guid: 97aab08b4d2b35c4482f9fafb6d7e18a, type: 3}
+  m_PrefabInstance: {fileID: 1892427985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2121060277
 GameObject:
   m_ObjectHideFlags: 0

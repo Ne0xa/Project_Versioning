@@ -7,13 +7,13 @@ public class PlayerHealth : MonoBehaviour
     [Header("Health")]
     [SerializeField] private int maxHealth;
     [ShowNonSerializedField] private int _currentHealth;
-    
     private bool _isDead;
     private Animator _anim;
     private Vector3 _startPos;
     [SerializeField] private UnityEvent _OnDie;
     public int CurrentHealth => _currentHealth;
     public int MaxHealth => maxHealth;
+    public bool IsDead => _isDead;
     void Start()
     {
 
@@ -40,6 +40,9 @@ public class PlayerHealth : MonoBehaviour
         _isDead = true;
         // _anim.SetTrigger("Death");
         GetComponent<Collider2D>().enabled = false;
+
+        FindAnyObjectByType<Embuscade>().DestroyAllEnnemis();
+
         _OnDie.Invoke();
         Respawn();
     }
