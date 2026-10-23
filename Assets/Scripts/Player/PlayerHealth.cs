@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private bool _isDead;
     private Animator _anim;
     private Vector3 _startPos;
+    [SerializeField] private UnityEvent _OnDie;
     public int CurrentHealth => _currentHealth;
     public int MaxHealth => maxHealth;
     void Start()
@@ -38,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         _isDead = true;
         // _anim.SetTrigger("Death");
         GetComponent<Collider2D>().enabled = false;
+        _OnDie.Invoke();
         Respawn();
     }
 
