@@ -10,14 +10,16 @@ public class PlayerHealth : MonoBehaviour
     private bool _isDead;
     private Animator _anim;
     private Vector3 _startPos;
+    private Rigidbody2D _rb;
     [SerializeField] private UnityEvent _OnDie;
     public int CurrentHealth => _currentHealth;
     public int MaxHealth => maxHealth;
     public bool IsDead => _isDead;
+    
     void Start()
     {
-
         _anim = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
         _currentHealth = maxHealth;
         _startPos = transform.position;
     }
@@ -42,7 +44,6 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
 
         FindAnyObjectByType<Embuscade>().DestroyAllEnnemis();
-
         _OnDie.Invoke();
         Respawn();
     }
@@ -50,7 +51,21 @@ public class PlayerHealth : MonoBehaviour
     private void Respawn()
     {
         _isDead = false;
+        _currentHealth = maxHealth;
         GetComponent<Collider2D>().enabled = true;
+        if (_rb != null)
+        {
+            _rb.linearVelocity = Vector2.zero;
+            _rb.position = _startPos;
+        }
         transform.position = _startPos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Respawn"))
+        {
+            Respawn();
+        }
     }
 }
