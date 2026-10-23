@@ -40,4 +40,11 @@ public class Embuscade : MonoBehaviour
             _nbrApparition3--;
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            ActiveEmbuscade();
+        }
+    }
 }
