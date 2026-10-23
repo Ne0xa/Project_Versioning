@@ -42,6 +42,12 @@
 # Rider cache directory
 .idea/
 
+.vsconfig/
+.vscode/
+
+# Rider cache directory
+.idea/
+
 # Gradle cache directory
 .gradle/
 
@@ -112,3 +118,4 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+.vsconfig
