@@ -10,9 +10,11 @@ public class PlayerHealth : MonoBehaviour
     private bool _isDead;
     private Animator _anim;
     private Vector3 _startPos;
-
+    public int CurrentHealth => _currentHealth;
+    public int MaxHealth => maxHealth;
     void Start()
     {
+
         _anim = GetComponent<Animator>();
         _currentHealth = maxHealth;
         _startPos = transform.position;
